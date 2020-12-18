@@ -29,3 +29,6 @@ class TestFile(unittest.TestCase):
         mock_isfile.return_value = False
         with self.assertRaises(Exception):
             self.temp.delete_file('/fake/file/path.txt')
+
+    def tearDown(self):
+        self.temp = None
